@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Movie and Actor Search</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}">
+</head>
+<body>
+    <h1>Welcome to the Movie and Actor Search</h1>
+    <p>Explore a vast collection of movies and your favorite actors. Search for any movie or actor to find detailed information.</p>
+    <div class="navigation">
+        <a href="/search_movie"><button>Search for a Movie</button></a>
+        <a href="/search_actor"><button>Search for an Actor</button></a>
+    </div>
+    <div class="footer-image">
+        <img src="static/images/minions2.jpg" alt="Minions">
+    </div>
+</body>
+</html>
