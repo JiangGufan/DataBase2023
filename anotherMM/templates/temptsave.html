@@ -1,0 +1,62 @@
+<!-- <h3>{{ actor[0] }} ({{ actor[1] }})</h3>
+            {% if relations.get('导演') %}
+                <div>
+                    <span>导演:</span>
+                    {% for movie in relations['导演'] %}
+                        <div class="movie-item">
+                            <span>{{ movie.movie_name }} - {{ movie.year }}</span><br>
+                            <span>票房: {{ movie.box_office }}</span><br>
+                            <span>豆瓣评分: {{ movie.douban_rating }}</span>
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+            {% if relations.get('主演') %}
+                <div>
+                    <span>主演:</span>
+                    {% for movie in relations['主演'] %}
+                        <div class="movie-item">
+                            <span>{{ movie.movie_name }} - {{ movie.year }}</span><br>
+                            <span>票房: {{ movie.box_office }}</span><br>
+                            <span>豆瓣评分: {{ movie.douban_rating }}</span>
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endif %} -->
+
+    <!-- {% for actor, movies in actor_movies.items() %}
+        <div class="actor-details">
+            <h3>{{ actor[0] }} ({{ actor[1] }})</h3>
+            <div class="movies-list">
+                {% for movie in movies %}
+                    <div class="movie-item">
+                        <span>{{ movie.relation_type }}: {{ movie.movie_name }} - {{ movie.year }}</span>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    {% endfor %} -->
+    
+<!-- {% if actor_movies %}
+    {% for actor, relations in actor_movies.items() %}
+        <div class="actor-details">
+            <h2>{{ actor[0] }} ({{ actor[1] }})</h2>
+            <div class="relation-header">关系 电影名称 年份 票房 评分</div>
+            {% for relation, movies in relations.items() %}
+                {% if movies %}
+                    <div class="relation-group">
+                        <div class="relation-name">{{ relation }}</div>
+                        {% for movie in movies %}
+                            <div class="movie-details">
+                                <span>{{ movie.movie_name }}</span> - 
+                                <span>{{ movie.year }}</span> - 
+                                <span>票房: {{ movie.box_office }}</span> - 
+                                <span>评分: {{ movie.douban_rating }}</span>
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    {% endfor %}
+{% else %} -->
