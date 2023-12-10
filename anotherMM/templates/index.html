@@ -1,42 +1,8 @@
-<!-- <!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>豆瓣TOP100电影</title>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
-</head>
-<body>
-    <div class="wrapper">
-        <header>
-            <h1>豆瓣TOP100电影一览</h1>
-            <p>基于豆瓣TOP100电影信息（截至2021年），您可以探索丰富的电影集合及喜爱的演员。</p>
-        </header>
-        <nav>
-            <ul>
-                <li><a href="/movie-search">电影查询</a></li>
-                <li><a href="/actor-search">演员查询</a></li>
-                <li><a href="/box-office-analysis">票房分析</a></li>
-                <li><a href="/box-office-prediction">票房预测</a></li>
-            </ul>
-        </nav>
-        <main class="content">
-            <p>电影主体表单预留区域。</p>
-        </main>
-        <footer>
-            <p>&copy; 2023 JiangPanda电影管理系统</p>
-        </footer>
-    </div>
-</body>
-</html> -->
-
 
 {% extends "base.html" %}
 
-{% block title %}豆瓣TOP100电影{% endblock %}
-
 {% block header %}
-    <h1>豆瓣TOP100电影一览</h1>
+    <h1>票房TOP100电影一览</h1>
     <p>基于豆瓣TOP100电影信息（截至2021年），您可以探索丰富的电影集合及喜爱的演员。</p>
 {% endblock %}
 

@@ -1,5 +1,9 @@
 {% extends "base.html" %}
 
+{% block header %}
+    <h1>电影查询</h1>
+{% endblock %}
+
 {% block content %}
 <form action="{{ url_for('movie_search') }}" class="search-form" method="post">
     <div class="form-group">
@@ -14,7 +18,7 @@
     <table>
         <thead>
             <tr>
-                <th>序号</th>
+                <th>排名</th>
                 <th>电影名称</th>
                 <th>票房（亿元）</th>
                 <th>上映日期</th>

@@ -1,9 +1,13 @@
 {% extends "base.html" %}
 
+{% block header %}
+    <h1>电影人查询</h1>
+{% endblock %}
+
 {% block content %}
 <form action="{{ url_for('actor_search') }}" class="search-form" method="post">
     <div class="form-group">
-        <label for="actor_name">请输入演员名称:</label>
+        <label for="actor_name">请输入演员/导演名称:</label>
         <input type="text" id="actor_name" name="actor_name">
         <input type="submit" value="搜索">
     </div>
