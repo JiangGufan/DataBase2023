@@ -1,0 +1,71 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>Movie Search</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Search for a Movie</h1>
+    <form method="POST">
+        <input type="text" name="movie_name" placeholder="Enter movie name">
+        <button type="submit">Search</button>
+    </form>
+
+    {% if message %}
+        <p>{{ message }}</p>
+    {% endif %}
+
+    {% if movies %}
+        <h2>Search Results:</h2>
+        <ul>
+        {% for movie in movies %}
+            <li>{{ movie[1] }} - Released: {{ movie[2] }} - Country: {{ movie[3] }} - Type: {{ movie[4] }} - Year: {{ movie[5] }}</li>
+        {% endfor %}
+        </ul>
+
+    {% endif %}
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Movie Search</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Search for a Movie</h1>
+    <form method="POST">
+        <input type="text" name="movie_name" placeholder="Enter movie name">
+        <button type="submit">Search</button>
+    </form>
+
+    {% if message %}
+        <p>{{ message }}</p>
+    {% endif %}
+
+    {% if movies %}
+        <h2>Search Results:</h2>
+        <table>
+            <tr>
+                <th>Movie Name</th>
+                <th>Release Date</th>
+                <th>Country</th>
+                <th>Type</th>
+                <th>Year</th>
+                <th>Box Office</th>
+            </tr>
+            {% for movie in movies %}
+            <tr>
+                <td>{{ movie[1] }}</td>
+                <td>{{ movie[2] }}</td>
+                <td>{{ movie[3] }}</td>
+                <td>{{ movie[4] }}</td>
+                <td>{{ movie[5] }}</td>
+                <td>{{ movie[6] }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    {% endif %}
+</body>
+</html>

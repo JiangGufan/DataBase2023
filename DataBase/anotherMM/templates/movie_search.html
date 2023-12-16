@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+
+{% block header %}
+    <h1>电影查询</h1>
+{% endblock %}
+
+{% block content %}
+<form action="{{ url_for('movie_search') }}" class="search-form" method="post">
+    <div class="form-group">
+        <label for="movie_name">请输入电影名称:</label>
+        <input type="text" id="movie_name" name="movie_name">
+        <input type="submit" value="搜索">
+    </div>
+</form>
+
+{% if movies %}
+    <h2>查询结果</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>排名</th>
+                <th>电影名称</th>
+                <th>票房（亿元）</th>
+                <th>上映日期</th>
+                <th>国家</th>
+                <th>豆瓣评分</th>
+                <th>年份</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for movie in movies %}
+            <tr>
+                <td>{{ movie.movie_id }}</td>
+                <td>{{ movie.movie_name }}</td>
+                <td>{{ movie.box_office }}</td>
+                <td>{{ movie.release_date.strftime('%Y-%m-%d') if movie.release_date else 'N/A' }}</td>
+                <td>{{ movie.country }}</td>
+                <td>{{ movie.douban_rating }}</td>
+                <td>{{ movie.year }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% else %}
+    {% if searched %}
+    <h2>未找到相关结果，看看更多电影吧！</h2>
+    {% else %}
+    <h2>猜您感兴趣：</h2>
+    {% endif %}
+    <table>
+        <thead>
+            <tr>
+                <th>序号</th>
+                <th>电影名称</th>
+                <th>票房（亿元）</th>
+                <th>上映日期</th>
+                <th>国家</th>
+                <th>豆瓣评分</th>
+                <th>年份</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for movie in top_movies %}
+            <tr>
+                <td>{{ movie.movie_id }}</td>
+                <td>{{ movie.movie_name }}</td>
+                <td>{{ movie.box_office }}</td>
+                <td>{{ movie.release_date.strftime('%Y-%m-%d') if movie.release_date else 'N/A' }}</td>
+                <td>{{ movie.country }}</td>
+                <td>{{ movie.douban_rating }}</td>
+                <td>{{ movie.year }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endif %}
+{% endblock %}

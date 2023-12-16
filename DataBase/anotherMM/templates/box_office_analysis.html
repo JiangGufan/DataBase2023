@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block header %}
+    <h1>票房分析结果</h1>
+{% endblock %}
+
+{% block content %}
+    <section>
+        <h2>票房之和最高的前10位演员</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>演员</th>
+                    <th>地区</th>
+                    <th>总票房（亿元）</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for actor in top_actors %}
+                <tr>
+                    <td>{{ actor.movie_person_name }}</td>
+                    <td>{{ actor.country }}</td>
+                    <td>{{ actor.total_box_office }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </section>
+    <section>
+        <h2>票房之和最高的前10位导演</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>导演</th>
+                    <th>地区</th>
+                    <th>总票房（亿元）</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for director in top_directors %}
+                <tr>
+                    <td>{{ director.movie_person_name }}</td>
+                    <td>{{ director.country }}</td>
+                    <td>{{ director.total_box_office }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </section>
+{% endblock %}

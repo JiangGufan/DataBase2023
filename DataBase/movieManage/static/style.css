@@ -1,0 +1,175 @@
+/* Navigation Styles */
+.navigation {
+    text-align: center; /* Centers the navigation buttons */
+    margin: 20px; /* Adds some space around the navigation area */
+}
+
+.navigation a {
+    text-decoration: none; /* Removes underline from links */
+    color: white; /* Sets the text color */
+    margin: 0 10px; /* Adds space between buttons */
+}
+
+.navigation button {
+    background-color: #4CAF50; /* Green background */
+    border: none; /* Removes border */
+    color: white; /* White text color */
+    padding: 15px 30px; /* Padding inside the button */
+    text-align: center; /* Centers the text */
+    text-decoration: none; /* Removes underline */
+    display: inline-block; /* Aligns buttons side by side */
+    font-size: 16px; /* Sets the font size */
+    margin: 4px 2px; /* Adds margin around buttons */
+    cursor: pointer; /* Changes cursor to pointer on hover */
+    border-radius: 8px; /* Rounds the corners of the button */
+    transition-duration: 0.4s; /* Smooth transition for hover effect */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+form {
+    margin: 20px auto;
+}
+
+input, button {
+    padding: 10px;
+    margin: 5px;
+}
+
+/* Search Form Styles */
+.search-form {
+    text-align: center; /* Center the form elements */
+    margin: 20px; /* Add some margin around the form */
+}
+
+.search-input {
+    padding: 10px; /* Add some padding inside the input box */
+    font-size: 16px; /* Increase the font size for better readability */
+    border: 2px solid #ddd; /* Add a light border */
+    border-radius: 4px; /* Round the corners */
+    width: 50%; /* Set a specific width */
+    max-width: 300px; /* Maximum width */
+}
+
+.search-button {
+    padding: 10px 20px; /* Padding inside the button */
+    font-size: 16px; /* Font size of the button */
+    background-color: #4CAF50; /* Background color */
+    color: white; /* Text color */
+    border: none; /* Remove border */
+    border-radius: 4px; /* Round the corners */
+    cursor: pointer; /* Change cursor on hover */
+    transition-duration: 0.4s; /* Transition effect */
+}
+
+.search-button:hover {
+    background-color: #45a049; /* Darker shade on hover */
+}
+
+
+.header-container {
+    display: flex;                  /* Enable Flexbox */
+    justify-content: center;        /* Center items horizontally */
+    align-items: center;            /* Align items vertically */
+    padding: 10px;                  /* Add some padding */
+    position: relative;             /* Establish a positioning context for absolute children */
+}
+
+
+.top-right-button {
+    position: absolute; /* Position absolute relative to the nearest positioned ancestor */
+    top: 10px; /* 10 pixels from the top */
+    right: 10px; /* 10 pixels from the right */
+    z-index: 1000; /* Ensures the button is above most other elements */
+    background-color: #4CAF50; /* Background color */
+    color: white; /* Text color */
+    border: 2px solid #ddd; /* Add border if your search button has one */
+    border-radius: 4px; /* Match the search button border-radius */
+    cursor: pointer; /* Change cursor on hover */
+    transition-duration: 0.4s; /* Transition effect */
+    padding: 10px 20px; /* Adjust padding to match the search button */
+    font-size: 16px; /* Adjust font size to match the search button */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Adjust shadow to match the search button */
+}
+
+.top-right-button:hover {
+    background-color: #45a049; /* Darker shade on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* B*/
+}
+
+.message {
+    color: #31708f; /* Informational message color */
+    background-color: #d9edf7; /* Light blue background */
+    border-color: #bce8f1; /* Border color */
+    padding: 10px 10px; /* Increase top and bottom padding */
+    margin: 50px auto 50px auto; /* Top, right, bottom, left margins */
+    border: 1px solid #bce8f1; /* Solid border with color */
+    border-radius: 4px;
+    text-align: center;
+    max-width: 800px; /* Same max-width as the table */
+    width: 100%; /* Full-width relative to the max-width */
+}
+
+/* Table Styles */
+table {
+    max-width: 800px; /* Maximum width of the table */
+    width: 100%; /* Full-width relative to the max-width */
+    margin: 25px auto; /* Top and bottom margin 25px, left and right auto for centering */
+    border-collapse: collapse; /* Collapse borders */
+    font-size: 0.9em; /* Font size */
+    min-width: 400px; /* Minimum width */
+    border-radius: 5px 5px 0 0; /* Rounded corners at the top of the table */
+    overflow: hidden; /* Hide overflow - useful if you have a box shadow or border radius */
+    box-shadow: 0 0 20px rgba(0,0,0,0.15); /* Shadow for 3D effect */
+}
+
+
+th, td {
+    padding: 12px 15px; /* Padding in cells */
+    text-align: left; /* Align text to the left */
+}
+
+th {
+    background-color: #009879; /* Header background color */
+    color: #ffffff; /* Header text color */
+    text-transform: uppercase; /* Uppercase header text */
+}
+
+tr:nth-of-type(even) {
+    background-color: #f3f3f3; /* Even row background color */
+}
+
+tr:last-of-type {
+    border-bottom: 2px solid #009879; /* Last row border */
+}
+
+tr:hover {
+    background-color: #f1f1f1; /* Hover row background color */
+}
+
+/* Responsive Table */
+@media screen and (max-width: 600px) {
+    table {
+        display: block;
+        overflow-x: auto; /* Horizontal scroll on small devices */
+    }
+}
+
+
+.footer-image {
+    text-align: center; /* Center aligns the content */
+    margin: 20px 0; /* Adds space above and below the footer image */
+    padding: 20px 0; /* Optional: Adds padding above and below the footer image */
+}
+
+.footer-image img {
+    width: 30%; /* Adjust this value to scale down the image size */
+    height: auto; /* Keeps the image aspect ratio */
+    background-color: transparent; /* Sets the background color of the image to transparent */
+}

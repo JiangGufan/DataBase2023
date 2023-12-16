@@ -1,0 +1,306 @@
+/* 基础重置 */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* 字体 */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+    padding-top: 20px; /* 留出顶部空间 */
+}
+
+/* 页面包裹层，用于居中内容 */
+.wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    background: #fff;
+}
+
+/* 页眉 */
+header {
+    text-align: center;
+    padding-bottom: 0;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #eaeaea;
+}
+
+
+/* 设置导航栏为Flex容器 */
+nav ul {
+    display: flex; /* 使用Flex布局 */
+    justify-content: center; /* 居中对齐除了第一个元素外的所有元素 */
+    list-style: none;
+    background: #4c5caf;
+    padding: 0;
+    margin: 0;
+}
+
+/* 设置“首页”链接靠左 */
+nav ul li:first-child {
+    margin-right: auto; /* 将所有剩余空间放在右边，从而将此项推向左边 */
+}
+
+/* 导航链接的样式 */
+nav ul li a {
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s;
+}
+/* 为链接添加悬停效果 */
+nav ul li a:hover {
+    background-color: #5a6dce;
+    color: white;
+}
+/* 为首页链接添加特定样式 */
+nav ul li a.home-link {
+    font-weight: bold; /* 使其更加突出 */
+    background-color: #4c5cafe0; /* 特定的背景色 */
+    margin-right: 0; /*右侧留空间*/
+}
+/* 悬停效果 */
+nav ul li a.home-link:hover {
+    background-color: #6578d7;
+}
+
+.movie-poster {
+    width: 500px; /* 或者指定一个具体的像素值 */
+    height: auto; /* 保持图片的原始宽高比 */
+    border-radius: 10px; /* 如果你想要圆角边框 */
+    /* 添加更多样式，如边框、阴影等 */
+}
+
+/* 表格样式 */
+table {
+    width: 100%; /* 表格宽度为100% */
+    border-collapse: collapse; /* 边框合并为单一边框 */
+    margin-bottom: 20px; /* 表格下方留出空间 */
+}
+
+th, td {
+    border: 1px solid #ddd; /* 单元格边框 */
+    text-align: left; /* 文本左对齐 */
+    padding: 8px; /* 单元格内边距 */
+}
+th {
+    background-color: #4c5caf; /* 表头背景色 */
+    color: white; /* 表头文字颜色 */
+}
+tr:nth-child(even) {
+    background-color: #f2f2f2; /* 交替行颜色 */
+}
+
+/* 表单样式 */
+.search-form {
+    display: flex; /* 设置为 Flexbox 布局 */
+    align-items: center; /* 垂直居中对齐 */
+    gap: 10px; /* 设置元素之间的间距 */
+    margin-bottom: 15px;
+}
+
+.search-form .form-group {
+    
+    display: flex ;
+    align-items: center; /*flex 垂直居中对齐 */
+    gap: 10px;
+}
+
+.search-form label {
+    margin-bottom: 0; /* 移除标签的底部外边距 */
+}
+
+.search-form input[type="text"] {
+    width: auto; /* 或者你可以设置一个具体的宽度，比如 width: 300px; */
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.search-form input[type="submit"] {
+    padding: 10px 15px;
+    background-color: #232a4ca0;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.search-form input[type="submit"]:hover {
+    background-color: #6578d7;
+}
+
+.search-form input[type="number"] {
+    width: auto; 
+    padding: 8px; /* 增加内边距，使输入框更容易点击 */
+    border: 1px solid #ccc;
+    border-radius: 4px; /* 轻微的圆角 */
+}
+/* 针对票房预测 */
+.search-form .vertical-form-group {
+    flex-direction: column; /* 子元素列排列 */
+    align-items: flex-start; /* 子元素左对齐 */
+}
+.search-form .vertical-form-group label {
+    margin-bottom: 5px; /* 在标签和输入框之间添加一些空间 */
+}
+
+/* 对复选框进行样式化 */
+.input-field {
+    display: block;
+    width: 100%; /* 使输入框宽度为100% */
+    margin-top: 5px;
+    /* 其他样式保持不变 */
+}
+
+/* 复选框按钮样式 */
+.btn-check {
+    display: none; /* 隐藏默认复选框 */
+}
+
+.btn {
+    display: inline-block;
+    background-color: #f4f4f4;
+    color: #333;
+    padding: 10px 20px;
+    margin: 2px;
+    text-align: center;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn:hover {
+    background-color: #eaeaea;
+}
+
+.btn-check:checked + .btn {
+    background-color: #4c5caf;
+    color: white;
+    border-color: #4c5caf;
+}
+
+/* 对于标签组合 */
+.label-group {
+    display: flex;
+    justify-content: space-between; /* 在项目之间平均分配空间 */
+    flex-direction: column;
+    align-items: flex-start; /* 与输入框对齐 */
+}
+
+.label-title {
+    margin-bottom: 10px; /* 添加一些空间在标题和标签之间 */
+}
+
+.labels-container {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); /* 创建6列的网格布局 */
+    justify-content: start; /* 从开始位置对齐 */
+    gap: 10px; /* 添加一些间隙 */
+}
+
+/* 确保包裹输入框和按钮的form-group都是flex容器，并且子元素都是对齐的 */
+.search-form .form-group,
+.search-form .submit-group { /* 新增.submit-group来特别控制提交按钮 */
+    display: flex;
+    align-items: flex-start; /* 子项与容器的开始位置对齐 */
+    gap: 10px;
+}
+/* 如果提交按钮是单独的，确保它和输入框高度一致 */
+.search-form input[type="submit"] {
+    height: 38px; /* 设置按钮高度与输入框一致，可能需要根据实际输入框高度调整 */
+}
+/* 如果输入框和按钮在同一个form-group内 */
+.search-form .form-group input[type="number"],
+.search-form .form-group input[type="submit"] {
+    margin-top: 0; /* 移除输入框和按钮的顶部外边距，如果有的话 */
+}
+/* 票房预测的结果格式 */
+.message, .prediction-result {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 5px;
+    background-color: #f4f4f4;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.message {
+    color: #d9534f; /* 警告消息颜色 */
+}
+.prediction-result {
+    color: #4a35b1; /* 预测结果颜色 */
+}
+.selected-labels-list {
+    list-style-type: none; /* 移除默认的列表样式 */
+    padding: 0; /* 移除默认的内边距 */
+}
+.selected-labels-list li {
+    display: inline; /* 让列表项水平排列 */
+    margin-right: 10px; /* 在标签之间添加一些间隔 */
+}
+
+
+/* 电影人查询表单 */
+.actor-movies-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.actor-movies-table th, .actor-movies-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.actor-row th {
+    background-color: transparent;
+    color: black;
+    border-left: none;  /* 隐藏左边框 */
+    border-right: none; /* 隐藏右边框 */
+    height: 50px;       /* 增加单元格的高度 */
+}
+
+.movie-header th {
+    background-color: #4c5caf;
+}
+
+.actor-movies-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+
+/* 主要内容区域 */
+.content {
+    min-height: 400px; /* 提供最小高度 */
+    padding: 20px;
+    text-align: center; /* 文本居中 */
+}
+
+
+footer {
+    text-align: center;
+    background: #4c5caf;
+    color: #fff;
+    padding: 10px 0;
+    margin-top: 20px; /* 如果 footer 不是 fixed，则需要 top margin */
+    border-top: 2px solid #eaeaea; /* 与 header 的边框相匹配 */
+}
+/* 响应式调整 */
+@media (max-width: 768px) {
+    nav ul li {
+        display: block;
+    }
+    form {
+        width: auto; /* 在小屏幕上自动调整表单宽度 */
+    }
+    .wrapper {
+        padding: 10px;
+    }
+}

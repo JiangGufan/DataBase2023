@@ -1,0 +1,38 @@
+
+{% extends "base.html" %}
+
+{% block header %}
+    <h1>票房TOP100电影一览</h1>
+    <p>基于豆瓣TOP100电影信息（截至2021年），您可以探索丰富的电影集合及喜爱的演员。</p>
+{% endblock %}
+
+{% block content %}
+    <img src="{{ url_for('static', filename='images/minions2.jpg') }}" class="movie-poster" alt="Minions">
+    <h2>中国影史票房前30电影速览（数据截止至2021年12月）</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>序号</th>
+                <th>电影名称</th>
+                <th>票房（亿元）</th>
+                <th>上映日期</th>
+                <th>国家</th>
+                <th>豆瓣评分</th>
+                <th>年份</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for movie in top_movies %}
+            <tr>
+                <td>{{ movie.movie_id }}</td>
+                <td>{{ movie.movie_name }}</td>
+                <td>{{ movie.box_office }}</td>
+                <td>{{ movie.release_date.strftime('%Y-%m-%d') if movie.release_date else 'N/A' }}</td>
+                <td>{{ movie.country }}</td>
+                <td>{{ movie.douban_rating }}</td>
+                <td>{{ movie.year }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
